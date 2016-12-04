@@ -25,7 +25,7 @@ username=test&password=test
 
 ## Attaque
 
-Première tentative basique de sqlmap. Malheuresement, cette attaque va être très lente a cette étape ``
+Première tentative basique de sqlmap. Malheuresement, cette attaque va être très lente.
 ```
 sqlmap -r req.txt -p username,password --dbms sqlite --dbs
 ```
