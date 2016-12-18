@@ -1,0 +1,14 @@
+Comprendre la méthode de chiffrement.
+
+axb signifie 'b' pixel de couleur 'a'
+Chaque notation est séparé par un +.
+Un saut à la ligne est un saut à la ligne sur le résultat aussi.
+
+Les couleurs sont:
+ 0 = Noir
+ 1 = Blanc
+
+Exemples:
+0x3 -> 000
+0x7 -> 0000000
+4x1 -> 1111

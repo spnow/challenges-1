@@ -1,0 +1,4 @@
+Un hash par SHA256 ne peut pas faire 65 octets, il y a une valeur de trop.
+Il faut supprimer le 'k' qui n'as rien a faire dans une écriture en hexa.
+On utiliser une Rainbow table trouvé sur internet pour décoder ce hash: 4dM1n
+On fait son SHA1 pour valider: a7c9d5a37201c08c5b7b156173bea5ec2063edf9

@@ -1,0 +1,5 @@
+Il suffit d'effectuer deux analyses:
+    - Indicide de coincidence pour trouverla longueur de clef
+    - Indice de coincidence mutuelle pour trouver les décalages des sous textes, et une clef a décalage pres.
+
+On test tout les décalage sur la clef (mode cesar) pour retrouver un text clair.

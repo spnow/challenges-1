@@ -1,0 +1,37 @@
+Ce crackme est de niveau intermédiaire, il comporte tout de même de petits pièges et des "fake instructions". 
+
+
+[SOLUTION]
+
+Pour commencer, regardons ce que nous avons en utilisant "ltrace" et un mot de passe quelconque, par exemple "yoda".
+
+    > ltrace ./crackme yoda
+
+    __libc_start_main(0x8048554, 2, 0xffd89534, 0x8048840 <unfinished ...>
+    malloc (29) = 0x8059008
+    memcpy(0x8059008, "_0cGj35m9V5T3\303\2078CJ0\303\2009H95h3xdh\0",31) = 0x8059008
+    memcpy(0xffd893fa, "_Celebration\0",13) = 0xffd893fa
+    strcpy(0xffd8945e,"yoda") = 0xffd8945e
+    puts("V\303\251rification de votre mot de pa"...Vérification de votre mot de passe..
+    ) = 38
+    strcmp("yoda", "_0cGjc5m_.5\r\n\303\2078CJ0\303\2009")= 1
+    printf("le voie de la sagesse te guidera"...le voie de la sagesse te guidera, tache de trouver le mot de passe petit padawaan
+    ) = 84
+    exit(0  <no return ...>
+    +++ exited (status 0) +++
+
+On remarque une comparaison de chaine de caractères avec la fonction "strcmp" entre notre mot de passe "yoda", et une autre chaine de caractère composée de caractères spéciaux, que l’on ne peut pas écrire directement dans la console pour les entrer en arguments. On va donc créer des variables pour ces caractères.
+
+    > BAR=$'\r'
+    > BAN=$'\n'
+    > BAC=$'\303\207'
+    > BAA=$'\303\200'
+    > ./crackme "_0cGjc5m_.5${BAR}${BAN}${BAC}8CJ0${BAA}9"
+
+    Vérification de votre mot de passe..
+    '+) Authentification réussie...
+    U'r root!
+
+    sh 3.0 # password: liberté!
+
+Et c’est la victoire !

@@ -1,0 +1,22 @@
+Encore un exe à cracker, toujours compilé avec gcc32 sur x86
+
+
+[SOLUTION]
+
+Le mot de passe est visible en clair avec la commande strings :
+
+    $ strings ch2.bin | more
+     
+    [...]
+    ############################################################
+    ##        Bienvennue dans ce challenge de cracking        ##
+    ############################################################
+    username: 
+    password: 
+    987654321
+    Bien joue, vous pouvez valider l'epreuve avec le mot de passe : %s !
+    Bad password
+    Bad username
+    [...]
+
+On remarque la chaîne 987654321 est le flag.

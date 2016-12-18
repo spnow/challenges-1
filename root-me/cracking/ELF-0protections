@@ -1,0 +1,20 @@
+Premier challenge de cracking, programme rédigé en C avec vi et compilé avec GCC32.
+
+    ############################################################
+    ##        Bienvennue dans ce challenge de cracking        ##
+    ############################################################
+    Veuillez entrer le mot de passe :
+    Bien joue, vous pouvez valider l'epreuve avec le pass : %s!
+    Dommage, essaye encore une fois.
+
+
+[SOLUTION]
+
+Il suffit d’exécuter le programme avec ltrace (permet de voir les appels à des fonctions de bibliothèques externes faits par le programme) en tapant un mot de basse bidon :
+
+    $ ltrace ./ch1.bin
+
+Dans la sortie de ltrace, on peut remarquer un appel à strcmp :
+    strcmp("tentative_random", "123456789")
+
+On se doute alors que l’entrée de l’utilisateur ("tentative_random") est comparée avec le vrai mot de passe ("123456789"), que l’on peut donc rentrer pour valider l’épreuve.

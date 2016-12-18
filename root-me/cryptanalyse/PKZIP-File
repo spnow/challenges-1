@@ -1,0 +1,14 @@
+[ENONCE]
+
+Une archive au format ZIP protégée par un mot de passe.
+
+
+[SOLUTION]
+
+En utilisant fcrack zip et testant plusieurs possibilites (alphabet, longueur, etc).
+c 1: option c pour choisir l'alphabet, ici 1 pour les chiffres [0,9]
+l 2-5: option l pour la longueur, ici de 2 à 5
+
+    fcrackzip -u -c 1 -l 4-7 ch5.zip
+    PASSWORD FOUND!!!!: pw == 14535
+    
